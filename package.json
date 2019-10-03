@@ -1,18 +1,25 @@
 {
   "name": "hiddenbot_rep",
   "version": "0.0.1",
-  "description": "",
+  "description": "| NOTE: This repo is still in development, and a majority of this README is for personal use as a processing document. |\r | --- |",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node .",
-    "lint": "eslint ."
-  },
-  "keywords": [],
-  "author": "Alan Bixby",
-  "license": "MIT",
   "dependencies": {
     "discord.js": "^11.5.1",
     "eslint": "^6.5.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanbixby/HD_Marketplace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanbixby/HD_Marketplace/issues"
+  },
+  "homepage": "https://github.com/alanbixby/HD_Marketplace#readme"
 }
