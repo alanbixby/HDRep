@@ -1,3 +1,6 @@
+#configuration files
+config.json
+
 # Logs
 logs
 *.log
@@ -44,6 +47,7 @@ typings/
 
 # Optional eslint cache
 .eslintcache
+.eslintrc.json
 
 # Optional REPL history
 .node_repl_history
@@ -59,3 +63,6 @@ typings/
 
 # next.js build output
 .next
+
+# VSC Extension Settings
+.vscode/
