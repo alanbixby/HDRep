@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Discord = require('discord.js');
+const talkedRecently = new Set();
 
 const config = require('./config.json');
 const token = config.token;
@@ -20,13 +21,22 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    if(!message.content.startsWith(prefix) || message.author.bot) return; // Exempt non-commands and messages from self.
+    if (!message.content.startsWith(prefix) || message.author.bot) return; // Exempt non-commands and messages from self.
 
     const args = message.content.slice(prefix.length).split(/ +/); // Remove prefix, make array of elements; ignore mu spaces.
     const commandName = args.shift().toLowerCase(); // Expect first element to be command, follow are arguments.
 
     if (!client.commands.has(commandName)) return;
     const command = client.commands.get(commandName);
+
+    // Check for an argument requirement in command file; || NOTE: Leave args property false/null if command has dual functionality.
+    if (command.args && !args.length) {
+        let reply =  (`You didn't provide any arguments, ${message.author}.`);
+        if (command.usage) {
+            let arguments = command.usage.map(usage => `[${usage}]`.join(' '));
+            reply += `\nPlease use the format: \`${prefix}${command.name}]\` ${arguments}`;
+        }
+    }
 
     try {
         command.execute(message, args);
