@@ -10,6 +10,10 @@ module.exports = class SayCommand extends Command {
             memberName: 'dm',
             description: 'Messages a user you mention.',
             examples: ['say Hello there!'],
+            throttling: {
+                usages: 1,
+                duration: 18000
+            },
             args: [
                 {
                     key: 'user',

@@ -10,6 +10,7 @@ const client = new CommandoClient({
 
 client.registry
     .registerDefaultTypes()
+    .registerTypesIn(path.join(__dirname, 'types')) // image.js lives in ./types/image.js
     .registerGroups([
         ['groupkey', 'Actual Group Name'],
         ['template', 'Template Command Group'],

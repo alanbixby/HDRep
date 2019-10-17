@@ -12,17 +12,17 @@ module.exports = class SayCommand extends Command {
             examples: ['say Hello there!'],
             args: [
                 {
-                    key: 'text', // This is the argument in the run method.
-                    prompt: 'What text would you like the bot to say?', // What the bot should ask if no argument is provided.
-                    type: 'string' // string, integer, user, member
+                    key: 'image', // This is the argument in the run method.
+                    prompt: 'What image would you like to add?', // What the bot should ask if no argument is provided.
+                    type: 'image' // string, integer, user, member
                 }
             ]
         });
     }
 
-    run(msg, { text }) {
+    run(msg, { image }) {
         const embed = new RichEmbed()
-            .setDescription(`You told the bot to say:\n"${text}"`)
+            .setDescription(`You told the bot to say:\n"${image.url}"`)
             .setColor(0x33CC33); 
         return msg.embed(embed);
     }
